@@ -32,16 +32,16 @@
 			<version>2.9.2</version>
 		</dependency> -->
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
-		</dependency>      
-		<!-- <dependency>
+		</dependency>   -->    
+		 <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
-		</dependency> -->
+		</dependency> 
 	<!-- 	<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -80,17 +80,17 @@
     <version>0.11.2</version>
     <scope>runtime</scope>
 </dependency>
-<dependency>
+<!-- <dependency>
     <groupId>com.heroku.sdk</groupId>
     <artifactId>heroku-maven-plugin</artifactId>
     <version>3.0.4</version>
-</dependency>
+</dependency> -->
 
 	</dependencies>
 
 	<build>
 		<plugins>
-		<plugin>
+	<!-- 	<plugin>
 				<groupId>com.heroku.sdk</groupId>
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>3.0.3</version>
@@ -107,7 +107,7 @@
 						</web>
 					</processTypes>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
