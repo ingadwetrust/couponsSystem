@@ -41,6 +41,9 @@ public class TokenFilter implements Filter {
 
 		if (token != null) {
 			if (jwtUtil.isTokenExpired(token)) {
+				res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+				res.setHeader("Access-Control-Allow-Origin", "*");
+				res.setHeader("Access-Control-Allow-Headers", "*");
 				res.sendError(HttpStatus.UNAUTHORIZED.value(), "you are not authorized");
 			}
 			if (req.getRequestURI().contains("/admin")) {
@@ -49,6 +52,9 @@ public class TokenFilter implements Filter {
 					chain.doFilter(request, response);
 				} else {
 					System.out.println("ADMIN FILTER FAIL-------------");
+					res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+					res.setHeader("Access-Control-Allow-Origin", "*");
+					res.setHeader("Access-Control-Allow-Headers", "*");
 					res.sendError(HttpStatus.UNAUTHORIZED.value(), "you are not an admin");
 				}
 
@@ -58,6 +64,9 @@ public class TokenFilter implements Filter {
 					chain.doFilter(request, response);
 				} else {
 					System.out.println("COMPANY FILTER FAIL-------------");
+					res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+					res.setHeader("Access-Control-Allow-Origin", "*");
+					res.setHeader("Access-Control-Allow-Headers", "*");
 					res.sendError(HttpStatus.UNAUTHORIZED.value(), "you are not a company");
 				}
 			} else if (req.getRequestURI().contains("/customer")) {
@@ -66,6 +75,9 @@ public class TokenFilter implements Filter {
 					chain.doFilter(request, response);
 				} else {
 					System.out.println("CUSTOMER FILTER FAIL-------------");
+					res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+					res.setHeader("Access-Control-Allow-Origin", "*");
+					res.setHeader("Access-Control-Allow-Headers", "*");
 					res.sendError(HttpStatus.UNAUTHORIZED.value(), "you are not a customer");
 				}
 			} else {
